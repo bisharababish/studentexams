@@ -1,0 +1,134 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 164 86% 19%; /* Al-Quds green */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 43 85% 62%; /* Al-Quds gold */
+    --secondary-foreground: 0 0% 20%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 164 86% 16%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 164 86% 19%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 164 86% 19%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 43 85% 62%;
+    --sidebar-primary-foreground: 0 0% 20%;
+    --sidebar-accent: 164 86% 12%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 164 86% 15%;
+    --sidebar-ring: 43 85% 62%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 164 86% 19%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 43 85% 62%;
+    --secondary-foreground: 0 0% 20%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 164 86% 12%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 164 86% 19%;
+    
+    --sidebar-background: 164 86% 10%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 43 85% 62%;
+    --sidebar-primary-foreground: 0 0% 20%;
+    --sidebar-accent: 164 86% 15%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 164 86% 20%;
+    --sidebar-ring: 43 85% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .quds-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .quds-card {
+    @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow;
+  }
+  
+  .quds-btn {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors 
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
+  }
+  
+  .quds-btn-primary {
+    @apply bg-quds-green text-white hover:bg-quds-darkgreen;
+  }
+  
+  .quds-btn-secondary {
+    @apply bg-quds-gold text-quds-dark hover:bg-quds-lightgold;
+  }
+  
+  .quds-input {
+    @apply flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm
+    ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium
+    placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2
+    focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .quiz-card {
+    @apply bg-white border border-quds-gold/30 shadow-sm hover:shadow-md transition-all rounded-lg p-6;
+  }
+  
+  .attendance-card {
+    @apply bg-white border-l-4 border-quds-green shadow-sm hover:shadow-md transition-all rounded-lg p-4;
+  }
+}
